@@ -1,0 +1,12 @@
+[submodule "hack-spring-boot"]
+	path = hack-spring-boot
+	url = https://github.com/tarantulDeveloper/hack-spring-boot.git
+[submodule "Hakaton.Askjournal.Mobile"]
+	path = Hakaton.Askjournal.Mobile
+	url = https://github.com/2Xpro-pop/Hakaton.Askjournal.Mobile
+[submodule "Hakaton.Askjournal.DesDer"]
+	path = Hakaton.Askjournal.DesDer
+	url = https://github.com/2Xpro-pop/Hakaton.Askjournal.DesDer
+[submodule "Hakaton.Askjournal.FastChat"]
+	path = Hakaton.Askjournal.FastChat
+	url = https://github.com/2Xpro-pop/Hakaton.Askjournal.FastChat
