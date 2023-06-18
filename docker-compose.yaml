@@ -1,0 +1,42 @@
+version: '3.7'
+
+networks:
+  gl:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
+services:
+
+  api-gateway:
+    build: ./nginx
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      gl: 
+        ipv4_address: 10.5.0.3
+
+  # asp-server:
+  #   build: 
+  #     context: ./Server
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   volumes:
+  #     - ./appsettings.json:./app/appsettings.json
+ 
+  postgresql:
+    image: postgres
+    restart: always
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/pgdata
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - 5432:5432
+    networks:
+      gl:
+        ipv4_address: 10.5.0.5
